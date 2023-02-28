@@ -1,1 +1,0 @@
-# GEtting started with pointers
