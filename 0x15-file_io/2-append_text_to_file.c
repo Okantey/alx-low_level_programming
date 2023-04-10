@@ -21,9 +21,9 @@ int _strlen(char *s)
 }
 
 /**
-* append_text_to_file - appends text at the end of a file.
+* append_text_to_file - appends text.
 * @filename: file to append.
-* @text_content: info to append into the file.
+* @text_content: info 
 * Return: 1 on success, -1 on failure
 */
 

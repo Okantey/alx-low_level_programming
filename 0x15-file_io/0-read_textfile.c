@@ -3,11 +3,11 @@
 #include "main.h"
 
 /**
- * read_textfile - reads a text file and prints it to the standard output
+ * read_textfile - reads a text file and prints 
  * @filename: the name of the file to read
- * @letters: the number of letters to read and print
+ * @letters: the number of letters
  *
- * Return: the number of letters actually read and printed, or 0 on failure
+ * Return: the number of letters
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {

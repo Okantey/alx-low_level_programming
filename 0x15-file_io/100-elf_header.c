@@ -19,9 +19,9 @@ void close_elf(int elf);
 
 /**
  * check_elf - Checks if a file is an ELF file.
- * @e_ident: A pointer to an array containing the ELF magic numbers.
- *
- * Description: If the file is not an ELF file - exit code 98.
+ * @e_ident:
+ * This code verifies whether a given file is an ELF file by examining the ELF magic numbers stored in an array pointed to by e_ident. 
+ * If the file does not qualify as an ELF file, the program exits with exit code 98
  */
 void check_elf(unsigned char *e_ident)
 {
@@ -178,7 +178,7 @@ void print_osabi(unsigned char *e_ident)
 
 /**
  * print_abi - Prints the ABI version of an ELF header.
- * @e_ident: A pointer to an array containing the ELF ABI version.
+ * @e_ident: A pointer to an array .
  */
 void print_abi(unsigned char *e_ident)
 {
@@ -222,8 +222,8 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 
 /**
  * print_entry - Prints the entry point of an ELF header.
- * @e_entry: The address of the ELF entry point.
- * @e_ident: A pointer to an array containing the ELF class.
+ * @e_entry: The address.
+ * @e_ident: A pointer .
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
@@ -260,8 +260,7 @@ void close_elf(int elf)
 }
 
 /**
- * main - Displays the information contained in the
- *        ELF header at the start of an ELF file.
+ * main - Shows info contained in the file
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
  *

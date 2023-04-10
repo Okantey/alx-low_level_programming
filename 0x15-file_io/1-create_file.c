@@ -3,7 +3,7 @@
 /**
   * _strlen - length of a string
   * @s: input char
-  * Return: length of a string
+  * Return: length
 **/
 
 int _strlen(char *s)
@@ -20,9 +20,9 @@ int _strlen(char *s)
 }
 
 /**
-* create_file - check the code for Holberton School students.
+* create_file - check the code for  students @ Holberton School.
 * @filename: file to create.
-* @text_content: info to write into the file.
+* @text_content: info .
 * Return: 1 on success, -1 on failure
 */
 
