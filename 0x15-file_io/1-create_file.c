@@ -1,60 +1,68 @@
 #include "main.h"
 
 /**
- * _strlen - returns the length of a string
- * @s: pointer to input string
- *
- * Return: length of the string
- */
+  * _strlen - length of a string
+  * @s: input char
+  * Return: length of a string
+**/
 
 int _strlen(char *s)
 {
-    int len = 0;
+	int i = 0;
 
-    while (s[len] != '\0')
-    {
-        len++;
-    }
+	while (s[i])
+	{
+		i++;
 
-    return (len);
+	}
+
+	return (i);
 }
 
 /**
- * create_file - creates a file with the given filename and writes the given
- * text content to it
- * @filename: pointer to the filename string
- * @text_content: pointer to the text content string
- *
- * Return: 1 on success, -1 on failure
- */
+* create_file - check the code for Holberton School students.
+* @filename: file to create.
+* @text_content: info to write into the file.
+* Return: 1 on success, -1 on failure
+*/
 
 int create_file(const char *filename, char *text_content)
+
 {
-    int fd, res;
-    ssize_t len;
+	ssize_t nletters;
 
-    if (!filename)
-        return (-1);
+	int file;
 
-    fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (!filename)
 
-    if (fd == -1)
-        return (-1);
+		return (1);
 
-    if (text_content)
-    {
-        len = _strlen(text_content);
-        res = write(fd, text_content, len);
+	file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
-        if (res == -1)
-        {
-            close(fd);
-            return (-1);
-        }
-    }
+	if (file == -1)
 
-    close(fd);
+	{
 
-    return (1);
+		return (-1);
+
+	}
+
+	if (text_content)
+
+	{
+
+		nletters = write(file, text_content, _strlen(text_content));
+
+		if (nletters == -1)
+
+		{
+			close(file);
+
+			return (-1);
+
+		}
+	}
+
+	close(file);
+	return (1);
 }
-
