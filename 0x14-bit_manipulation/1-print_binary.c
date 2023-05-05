@@ -1,14 +1,15 @@
 #include "main.h"
-
 /**
- * print_binary - Prints the binary representation of a number.
- * @n: The number to be printed in binary.
+ * print_binary - function that prints the binary representation of a number
+ * @n: number
  */
-
 void print_binary(unsigned long int n)
 {
-	if (n > 1)
-		print_binary(n >> 1);
+	int binary;
 
-	_putchar((n & 1) + '0');
+	if (n >> 1)
+		print_binary(n >> 1);
+	/* get the last bit of the number */
+	binary = n & 1;
+	putchar(binary + '0');
 }

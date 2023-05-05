@@ -1,1 +1,1 @@
-# Bit Manipulation , Gideon Nunoo
+## C - Bit manipulation
