@@ -1,64 +1,37 @@
 #include "main.h"
 
 /**
-  * _strlen - length of a string
-  * @s: input char
-  * Return: length of a string
-**/
-
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i])
-
-	{
-		i++;
-
-	}
-
-	return (i);
-}
-
-/**
-* append_text_to_file - appends text.
-* @filename: file to append.
-* @text_content: info 
-* Return: 1 on success, -1 on failure
-*/
-
+ * append_text_to_file - appends text at the end of a file
+ * @filename: path of the file
+ * @text_content: content to append at end of file
+ * Return: 1 on Success, -1 on failure
+ */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	ssize_t nletters;
-	int file;
+	int count, len = 0, fd, i;
 
-	if (!filename)
-
+	if (filename == NULL)
 		return (-1);
 
-	file = open(filename, O_WRONLY | O_APPEND);
-
-	if (file == -1)
-
-	{
-
+	/* Open file and get file descriptor */
+	fd = open(filename, 2 | O_APPEND, 0600);
+	if (fd == -1)
 		return (-1);
 
-	}
+	if (text_content == NULL)
+		return (1);
 
-	if (text_content)
+	for (i = 0; text_content[i]; i++)
+		len++;
 
+	/* write into file description */
+	count = write(fd, text_content, len);
+	if (count == -1)
 	{
-		nletters = write(file, text_content, _strlen(text_content));
-
-		if (nletters == -1)
-		{
-			close(file);
-			return (-1);
-
-		}
+		close(fd);
+		return (-1);
 	}
+	close(fd);
 
-	close(file);
 	return (1);
 }
